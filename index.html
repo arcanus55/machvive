@@ -9,18 +9,41 @@
     <main class="main-lgo" role="main">
         <aside class="lgo-space"></aside>
         <p class="lgo-para">
-            <span class="lgo-para__left">mach</span>
-            <span class="lgo-para__right">vive</span>
+            <span class="lgo-para__left  font_fam1"
+            data-font-hold="font_fam1">mach</span>
+            <span class="lgo-para__right font_fam2"
+            data-font-hold="font_fam2">vive</span>
         </p>
     </main>
+<script>
+    "use strict";
+    var _d = document;
+    var eL = _d.querySelector(".lgo-para__left");
+    var eR = _d.querySelector(".lgo-para__right");
+    setInterval(function(){
+        var nR = Math.floor(Math.random() * 20) + 1;
+        var sPrv = eL.dataset.fontHold;
+        eL.classList.add( "font_fam" + nR );
+        eL.dataset.fontHold = "font_fam" + nR;
+        eL.classList.remove( sPrv );
+    }, 2200);
+    setInterval(function(){
+        var nR = Math.floor(Math.random() * 20) + 1;
+        var sPrv = eR.dataset.fontHold;
+        eR.classList.add( "font_fam" + nR );
+        eR.dataset.fontHold = "font_fam" + nR;
+        eR.classList.remove( sPrv );
+    }, 1000);
+</script>
 <style>
     .lgo-space {
-        min-height: 42vh;
-        height: 42vh;
+        min-height: 28vh;
+        height: 28vh;
     }
-    .main-lgo, SPAN {
-        font-size: 32px;
+    .main-lgo {
+        font-size: 96px;
         text-align: center;
+        user-select: none;
     }
     .font_fam1 {font-family: 'Varela Round', sans-serif;}
     .font_fam2 {font-family: 'Josefin Sans', sans-serif;}
