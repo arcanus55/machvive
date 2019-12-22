@@ -9,31 +9,61 @@
     <main class="main-lgo" role="main">
         <aside class="lgo-space"></aside>
         <p class="lgo-para">
-            <span class="lgo-para__left  font_fam1"
-            data-font-hold="font_fam1">mach</span>
-            <span class="lgo-para__right font_fam2"
-            data-font-hold="font_fam2">vive</span>
+            <span class="js-lgo-para__left  font_fam4"
+            data-font-hold="font_fam4">mach</span>
+            <span class="js-lgo-para__right font_fam8"
+            data-font-hold="font_fam8">vive</span>
         </p>
+        <br>
+        <article class="js-lgo-list"></article>
+        <template id="js-temp">
+            <p class="lgo-para" title="++">
+                <span class="js-lgo-para__left  font_fam##"
+                data-font-hold="font_fam1">mach</span>
+                <span class="js-lgo-para__right font_fam||">vive</span>
+            </p>
+        </template>
     </main>
 <script>
     "use strict";
+    var aMVLgo = [[4,8],[7,9],[13,19],[15,6],[21,20]];
     var _d = document;
-    var eL = _d.querySelector(".lgo-para__left");
-    var eR = _d.querySelector(".lgo-para__right");
+    var eL = _d.querySelector(".js-lgo-para__left");
+    var eR = _d.querySelector(".js-lgo-para__right");
     setInterval(function(){
-        var nR = Math.floor(Math.random() * 20) + 1;
+        var nR = Math.floor(Math.random() * 4) + 1;
+    console.log("nR | " + nR);
+        nR = aMVLgo[ nR ][0];
         var sPrv = eL.dataset.fontHold;
         eL.classList.add( "font_fam" + nR );
         eL.dataset.fontHold = "font_fam" + nR;
         eL.classList.remove( sPrv );
     }, 2200);
     setInterval(function(){
-        var nR = Math.floor(Math.random() * 20) + 1;
+        var nL = Math.floor(Math.random() * 4) + 1;
+    console.log("nL | " + nL);
+        nL = aMVLgo[ nL ][1];
         var sPrv = eR.dataset.fontHold;
-        eR.classList.add( "font_fam" + nR );
-        eR.dataset.fontHold = "font_fam" + nR;
+        eR.classList.add( "font_fam" + nL );
+        eR.dataset.fontHold = "font_fam" + nL;
         eR.classList.remove( sPrv );
     }, 1000);
+    //
+    var nLeft = 1, nRight = 0;
+    var eList = _d.querySelector(".js-lgo-list");
+    var eTemp = _d.querySelector("#js-temp");
+
+    while( false && nLeft < 22 ){
+        if( ++nRight == 22){
+            nRight = 1;
+            if(++nLeft == 22) break;
+        }
+        eList.innerHTML = eList.innerHTML + eTemp.innerHTML
+        .replace("##", nLeft)
+        .replace("||", nRight)
+        .replace("++", String( nLeft + " - " + nRight ));
+    }
+
 </script>
 <style>
     BODY {
@@ -48,6 +78,7 @@
         text-align: center;
         user-select: none;
         color: #50655e;
+        line-height: 2;
     }
     .font_fam1 {font-family: 'Varela Round', sans-serif;}
     .font_fam2 {font-family: 'Josefin Sans', sans-serif;}
