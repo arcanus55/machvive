@@ -3,7 +3,7 @@
     <title>machvive</title>
     <meta charset="utf-8">
     <meta viewport="">
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Amita|Audiowide|Buda:300|Calligraffitti|Comfortaa|Condiment|Euphoria+Script|Exo+2|Fredericka+the+Great|Josefin+Sans|La+Belle+Aurore|Londrina+Sketch|Meddon|Satisfy|Special+Elite|Srisakdi|Sue+Ellen+Francisco|Tulpen+One|Varela+Round|Yeon+Sung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Audiowide|Comfortaa|Exo+2|Fredericka+the+Great|La+Belle+Aurore|Londrina+Sketch|Meddon|Special+Elite|Srisakdi|Tulpen+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="main-lgo" role="main">
@@ -31,38 +31,21 @@
     var eL = _d.querySelector(".js-lgo-para__left");
     var eR = _d.querySelector(".js-lgo-para__right");
     setInterval(function(){
-        var nR = Math.floor(Math.random() * 4) + 1;
-    console.log("nR | " + nR);
-        nR = aMVLgo[ nR ][0];
+        var nL = Math.floor(Math.random() * 4);
+        nL = aMVLgo[ nL ][0];
         var sPrv = eL.dataset.fontHold;
-        eL.classList.add( "font_fam" + nR );
-        eL.dataset.fontHold = "font_fam" + nR;
         eL.classList.remove( sPrv );
+        eL.classList.add( "font_fam" + nL );
+        eL.dataset.fontHold = "font_fam" + nL;
     }, 2200);
     setInterval(function(){
-        var nL = Math.floor(Math.random() * 4) + 1;
-    console.log("nL | " + nL);
-        nL = aMVLgo[ nL ][1];
+        var nR = Math.floor(Math.random() * 4);
+        nR = aMVLgo[ nR ][1];        
         var sPrv = eR.dataset.fontHold;
-        eR.classList.add( "font_fam" + nL );
-        eR.dataset.fontHold = "font_fam" + nL;
         eR.classList.remove( sPrv );
+        eR.classList.add( "font_fam" + nR );
+        eR.dataset.fontHold = "font_fam" + nR;
     }, 1000);
-    //
-    var nLeft = 1, nRight = 0;
-    var eList = _d.querySelector(".js-lgo-list");
-    var eTemp = _d.querySelector("#js-temp");
-
-    while( false && nLeft < 22 ){
-        if( ++nRight == 22){
-            nRight = 1;
-            if(++nLeft == 22) break;
-        }
-        eList.innerHTML = eList.innerHTML + eTemp.innerHTML
-        .replace("##", nLeft)
-        .replace("||", nRight)
-        .replace("++", String( nLeft + " - " + nRight ));
-    }
 
 </script>
 <style>
@@ -80,24 +63,14 @@
         color: #50655e;
         line-height: 2;
     }
-    .font_fam1 {font-family: 'Varela Round', sans-serif;}
-    .font_fam2 {font-family: 'Josefin Sans', sans-serif;}
     .font_fam3 {font-family: 'Exo 2', sans-serif;}
     .font_fam4 {font-family: 'Comfortaa', cursive;}
-    .font_fam5 {font-family: 'Satisfy', cursive;}
     .font_fam6 {font-family: 'Special Elite', cursive;}
     .font_fam7 {font-family: 'Advent Pro', sans-serif;}
     .font_fam8 {font-family: 'Audiowide', cursive;}
     .font_fam9 {font-family: 'Fredericka the Great', cursive;}
-    .font_fam10 {font-family: 'Sue Ellen Francisco', cursive;}
-    .font_fam11 {font-family: 'Calligraffitti', cursive;}
-    .font_fam12 {font-family: 'Yeon Sung', cursive;}
     .font_fam13 {font-family: 'La Belle Aurore', cursive;}
-    .font_fam14 {font-family: 'Amita', cursive;}
     .font_fam15 {font-family: 'Meddon', cursive;}
-    .font_fam16 {font-family: 'Euphoria Script', cursive;}
-    .font_fam17 {font-family: 'Buda', cursive;}
-    .font_fam18 {font-family: 'Condiment', cursive;}
     .font_fam19 {font-family: 'Tulpen One', cursive;}
     .font_fam20 {font-family: 'Srisakdi', cursive;}
     .font_fam21 {font-family: 'Londrina Sketch', cursive;}
