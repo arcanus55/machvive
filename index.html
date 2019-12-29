@@ -25,6 +25,7 @@
         </template>
     </main>
 <script>
+console.log( window.matchMedia('(prefers-color-scheme: dark)').media );
     "use strict";
     var aMVLgo = [[4,8],[7,9],[13,19],[15,6],[21,20]];
     var _d = document;
@@ -49,9 +50,20 @@
 
 </script>
 <style>
-    BODY {
-        background-color: #e6dd91;
+    @media (prefers-color-scheme: light) { 
+        body {
+            background-color: #e6dd91;
+        }
+        .main-lgo { color: #50655e; }
     }
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #50655e;
+        }       
+        .main-lgo { color: #e6dd91; }
+    }
+
+
     .lgo-space {
         min-height: 20vh;
         height: 20vh;
@@ -60,9 +72,9 @@
         font-size: 96px;
         text-align: center;
         user-select: none;
-        color: #50655e;
         line-height: 2;
     }
+
     .font_fam3 {font-family: 'Exo 2', sans-serif;}
     .font_fam4 {font-family: 'Comfortaa', cursive;}
     .font_fam6 {font-family: 'Special Elite', cursive;}
