@@ -14,11 +14,6 @@
             <span class="js-lgo-para__right font_fam8"
             data-font-hold="font_fam8" style="color: #ff6f61;">vive</span>
         </p>
-        <br>
-        <nav class="cta-btn__cnt">
-            <a class="cta-btn font_fam19"
-            href="/seo/ppc/smm/Regarding_Machvive.pdf" target="_blank" rel="noopener">What We Do</a>            
-        </nav>
 
 <!--
         <article class="js-term-1 l-term-type-cont"
@@ -35,7 +30,7 @@
 -->
         <article class="js-lgo-list"></article>
         <template id="js-temp">
-            <p class="lgo-para" title="++">
+            <p class="lgo-para" title="">
                 <span class="js-lgo-para__left  font_fam##"
                 data-font-hold="font_fam1">mach</span>
                 <span class="js-lgo-para__right font_fam||">vive</span>
@@ -61,17 +56,26 @@
         </output>
 
     </main>
+    <p class="tagline font_fam3">Chicago Digital Marketing Consultancy<br><a class="tagline font_fam4" href="tel:2246457588">224.645.7588</a></p>
+    
+    <br>
+    <nav class="cta-btn__cnt">
+        <a class="cta-btn font_fam19"
+        href="/seo/ppc/smm/Regarding_Machvive.pdf" target="_blank" rel="noopener">Get Started</a>            
+    </nav>
+
 
 <style>
     .cta-btn__cnt {
         position: absolute;
-        top: 16px; left: 16px;
+        text-align: center;
+        bottom: 16px; left: calc(50vw - 56px);
         width: 112px; height: 112px;
         border-radius: 100%;
-        background: linear-gradient(311deg, #892300 6%, #a94300 12%, #892300 24%);
+        background-color: #ff6f61;
         margin: 6px auto;
         padding: 8px;
-        color: #fff;
+        color: #50655e;
         border: 0;
         user-select: none;
     }
@@ -88,6 +92,16 @@
     .lgo-space {
         min-height: 20vh;
         height: 20vh;
+    }
+    .lgo-para {
+        max-height: 96px;
+    }
+    .tagline {
+        color: #50655e;
+        font-size: 24px;
+        text-align: center;
+        user-select: none;
+        line-height: 2;
     }
     .main-lgo {
         font-size: 96px;
@@ -177,30 +191,12 @@
 
     }
 
-    @media (prefers-color-scheme: light) { 
-        body {background-color: #e6dd91;}
-        .main-lgo { color: #50655e; }
-    }
-    @media (prefers-color-scheme: dark) {
-        body {background-color: #50655e;}       
-        .main-lgo { color: #e6dd91; }
-    }   
+    body {background-color: #e6dd91;}
+    .main-lgo { color: #50655e; }
 </style>
 <script>
     "use strict";
-    function f1210(){ return (Math.floor(Math.random() * (10) + 1)); }
-    /*  Glance Begin */
-    function pulse(){
-        gsap.to(".cta-btn__cnt", 3, {backgroundImage:"linear-gradient(311deg, #892300 53%, #a94300 88%, #892300 96%)", repeat:1, yoyo:true, repeatDelay:.4});
-    }
-    /*  Glance End */
-    /*  Pulse Begin */
-        setInterval(function(){
-            if( f1210() > 6 ){
-                pulse();
-            }
-        },4000);
-    /*  Pulse End*/
+
     var aMVLgo = [[4,8],[7,9],[13,19],[15,6],[21,20]];
     var _d = document;
     var eL = _d.querySelector(".js-lgo-para__left");
